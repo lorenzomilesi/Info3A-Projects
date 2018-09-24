@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+const int MAX = 100; // Buffer per fat pointer
+const int DELAY = 5; // Indice del cifrario
+
+int main(void) {
+
+	// Calloc: { numero elementi, dimensione di ogni blocco }
+	char *@fat crypt = calloc(MAX,sizeof(char));
+	char *@fat dec = calloc(MAX,sizeof(char));
+	char *@fat str = calloc(MAX,sizeof(char));
+
+	int i=0;
+	
+	char ch;
+	
+	FILE *@notnull test = (FILE@)fopen("test.txt", "r");
+	if (test == NULL){
+		return 0;
+	}
+	
+	while ((ch = (char)fgetc((FILE@)test)) != EOF){
+		str[i] = ch;
+		i++;
+	}
+	str[i+1] = '\0';
+	
+	close((int)test);
+	
+	printf( "## PROGRAMMA DI CIFRATURA ## \nIl programma riceve una stringa in input e ne restituisce una cifratura ottenuta con\nun delay di N posizioni lungo l'alfabeto latino (26 lettere) con N = n + i, dove:\n- n è una costante predefinita (5);\n- i è la posizione del carattere all'interno della stringa;\nNB: Spazi, virgole e punti sono, per scelta, ignorati nella cifratura.\n\nStringa in ingresso: %s \n", str);
+	
+	// Crypt
+	printf("Stringa cifrata: ");
+	for (int i=0;str[i]!='\0';i++){
+		if(str[i]==' ' || str[i]==',' || str[i]=='.')
+			crypt[i] = str[i];
+		else
+			crypt[i] = (str[i] - 64 + DELAY+(i+1)) % 27+64;
+		printf("%c",crypt[i]);
+	}
+	printf("\n");
+	
+	// Decrypt
+	printf("Stringa decifrata: ");
+	for (i=0;crypt[i]!=0;i++){
+		if(crypt[i]!=' ' && crypt[i]!=',' && crypt[i]!='.')
+			dec[i] = ((crypt[i] -64-(i+1)) + 27-DELAY) % 27+64;
+		else
+			dec[i] = crypt[i];
+		printf("%c",dec[i]);
+	}
+	printf("\n");
+	
+	return 0;
+}

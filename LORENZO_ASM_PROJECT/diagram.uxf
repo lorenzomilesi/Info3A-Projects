@@ -1,0 +1,13 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLUseCase</id><coordinates><x>340</x><y>210</y><w>120</w><h>120</h></coordinates><panel_attributes>INSERTED</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>50</x><y>210</y><w>120</w><h>120</h></coordinates><panel_attributes>READY</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>340</x><y>430</y><w>120</w><h>120</h></coordinates><panel_attributes>WORKING</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>610</x><y>210</y><w>120</w><h>120</h></coordinates><panel_attributes>ERROR</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>250</y><w>200</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-
+insert</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>320</y><w>70</w><h>130</h></coordinates><panel_attributes>lt=&lt;&lt;-
+pump_1
+pump_2</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>320</y><w>260</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-
+service</panel_attributes><additional_attributes>10;10;10;160;240;160</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>250</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;-
+insert</panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>450</x><y>320</y><w>280</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-
+
+
+insert
+pump_1
+pump_2</panel_attributes><additional_attributes>220;10;220;160;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>100</x><y>110</y><w>590</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;-
+service
+insert</panel_attributes><additional_attributes>10;100;10;20;570;20;570;100</additional_attributes></element></diagram>
